@@ -25,15 +25,18 @@ struct ContentView_Previews: PreviewProvider {
 
 struct HeaderView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 2) {
-            Text("Choose")
-                .font(.system(.largeTitle, design: .rounded))
-                .fontWeight(.black)
-            Text("Your Plan")
-                .font(.system(.largeTitle, design: .rounded))
-                .fontWeight(.black)
+        HStack {
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Choose")
+                    .font(.system(.largeTitle, design: .rounded))
+                    .fontWeight(.black)
+                Text("Your Plan")
+                    .font(.system(.largeTitle, design: .rounded))
+                    .fontWeight(.black)
+            }
+            .padding()
+            Spacer()
         }
-        .padding()
     }
 }
 
