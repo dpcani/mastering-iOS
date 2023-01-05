@@ -11,32 +11,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HeaderView()
-            
-            HStack(spacing: 16) {
-                PricingView(
-                    title: "Basic",
-                    price: "9",
-                    textColor: .white,
-                    bgColor: .purple)
-                
-                ZStack {
-                    PricingView(
-                        title: "Pro",
-                        price: "19",
-                        textColor: .black,
-                    bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))
-                    
-                    Text("Best for designer")
-                        .font(.system(.caption, design: .rounded))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(5)
-                        .background(Color(red: 255/255, green: 182/255, blue: 37/255))
-                        .offset(x: 0, y: 87)
-                }
-                
-            }
-            .padding()
+            PlansView()
+            TeamPlan()
         }
     }
 }
@@ -67,9 +43,15 @@ struct PricingView: View {
     var price: String
     var textColor: Color
     var bgColor: Color
+    var icon: String?
     
     var body: some View {
         VStack {
+            if let icon = icon {
+                Image(systemName: icon)
+                    .font(.system(size: 26))
+                    .foregroundColor(textColor)
+            }
             Text(title)
                 .font(.system(.title, design: .rounded))
                 .fontWeight(.black)
@@ -85,5 +67,69 @@ struct PricingView: View {
         .padding(40)
         .background(bgColor)
         .cornerRadius(10)
+    }
+}
+
+struct PlansView: View {
+    var body: some View {
+        HStack(spacing: 16) {
+            PricingView(
+                title: "Basic",
+                price: "9",
+                textColor: .white,
+                bgColor: .purple)
+            
+            ZStack {
+                PricingView(
+                    title: "Pro",
+                    price: "19",
+                    textColor: .black,
+                    bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))
+                
+                LabelBottom(
+                    title: "Best for designer",
+                    offSetX: 0,
+                    offSetY: 87
+                )
+            }
+        }
+        .padding()
+    }
+}
+
+struct TeamPlan: View {
+    var body: some View {
+        ZStack {
+            PricingView(
+                title: "Team",
+                price: "299",
+                textColor: .white,
+                bgColor: .black.opacity(0.75),
+                icon: "wand.and.rays"
+            )
+            LabelBottom(
+                title: "Perfect for teams with 20 members",
+                offSetX: 0,
+                offSetY: 105
+            )
+        }
+        .padding(.horizontal)
+    }
+}
+
+struct LabelBottom: View {
+    
+    var title: String
+    var offSetX: CGFloat
+    var offSetY: CGFloat
+    
+    var body: some View {
+        Text(title)
+            .font(.system(.caption, design: .rounded))
+            .fontWeight(.bold)
+            .foregroundColor(.white)
+            .padding(5)
+            .background(Color(red: 255/255, green: 182/255, blue: 37/255))
+            .offset(x: offSetX, y: offSetY)
     }
 }
