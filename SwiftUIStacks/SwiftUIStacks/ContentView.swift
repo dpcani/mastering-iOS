@@ -13,6 +13,8 @@ struct ContentView: View {
             HeaderView()
             PlansView()
             TeamPlan()
+            
+            Spacer()
         }
     }
 }
