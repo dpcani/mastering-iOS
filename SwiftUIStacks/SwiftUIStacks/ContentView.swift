@@ -12,18 +12,28 @@ struct ContentView: View {
         VStack {
             HeaderView()
             
-            HStack {
+            HStack(spacing: 16) {
                 PricingView(
                     title: "Basic",
                     price: "9",
                     textColor: .white,
                     bgColor: .purple)
                 
-                PricingView(
-                    title: "Pro",
-                    price: "19",
-                    textColor: .black,
+                ZStack {
+                    PricingView(
+                        title: "Pro",
+                        price: "19",
+                        textColor: .black,
                     bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))
+                    
+                    Text("Best for designer")
+                        .font(.system(.caption, design: .rounded))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(5)
+                        .background(Color(red: 255/255, green: 182/255, blue: 37/255))
+                        .offset(x: 0, y: 87)
+                }
                 
             }
             .padding()
