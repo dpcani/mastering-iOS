@@ -14,6 +14,8 @@ struct ContentView: View {
             CustomButton(icon: "trash", title: "Delete")
             CustomButton(icon: "square.and.arrow.up", title: "Share")
             CustomButton(icon: "square.and.pencil", title: "Edit")
+            
+            CustomCircleButton()
         }
         
     }
@@ -22,6 +24,16 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct CustomCircleButton: View {
+    var body: some View {
+        Button(action: {
+            print("Circle button tapped!")
+        }) {
+            Image(systemName: "plus")
+        }.buttonStyle(RotationButtonStyle())
     }
 }
 
@@ -57,5 +69,18 @@ struct GradientBackgroundStyle: ButtonStyle {
             .cornerRadius(40)
             .padding(.horizontal, 20)
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+    }
+}
+
+struct RotationButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 80, height: 80)
+            .background(.purple)
+            .clipShape(Circle())
+            .foregroundColor(.white)
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .rotationEffect(configuration.isPressed ? .degrees(360) : .degrees(0))
     }
 }
