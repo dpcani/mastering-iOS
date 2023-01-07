@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        /* VStack {
             Button {
                print("Delete Button pressed!")
             } label: {
@@ -27,6 +27,27 @@ struct ContentView: View {
             }
         }
         .padding()
+         */
+        
+        //Same Button with Label and Icon
+        Button {
+           print("Delete button tapped")
+        } label: {
+            Label(
+                title: {
+                    Text("Delete")
+                        .fontWeight(.semibold)
+                        .font(.title)
+                }, icon: {
+                    Image(systemName: "trash")
+                        .font(.title)
+                }
+            )
+            .padding()
+            .foregroundColor(.white)
+            .background(.red)
+            .cornerRadius(40)
+        }
     }
 }
 
