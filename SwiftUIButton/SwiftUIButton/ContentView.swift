@@ -11,20 +11,11 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button {
-               print("Button pressed!")
+               print("Delete Button pressed!")
             } label: {
-                Text("Hello World")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
-                    .background(.purple)
-                    .cornerRadius(40)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(.purple, lineWidth: 5)
-                    }
+                Image(systemName: "trash")
+                    .font(.largeTitle)
+                    .foregroundColor(.red)
                 
             }
         }
