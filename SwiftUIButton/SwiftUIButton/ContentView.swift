@@ -14,8 +14,11 @@ struct ContentView: View {
                print("Delete Button pressed!")
             } label: {
                 Image(systemName: "trash")
+                    .padding()
+                    .background(.red)
+                    .clipShape(Circle())
                     .font(.largeTitle)
-                    .foregroundColor(.red)
+                    .foregroundColor(.white)
                 
             }
         }
