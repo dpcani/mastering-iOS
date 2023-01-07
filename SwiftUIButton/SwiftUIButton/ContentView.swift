@@ -9,25 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Button(action: {
-            print("Delete tapped!")
-        }) {
-            HStack {
-                Image(systemName: "trash")
-                    .font(.title)
-                Text("Delete")
-                    .fontWeight(.semibold)
-                    .font(.title)
-            }
-            
+        
+        VStack {
+            CustomButton(icon: "trash", title: "Delete")
+            CustomButton(icon: "square.and.arrow.up", title: "Share")
+            CustomButton(icon: "square.and.pencil", title: "Edit")
         }
-        .buttonStyle(GradientBackgroundStyle())
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct CustomButton: View {
+    
+    var icon: String
+    var title: String
+    
+    var body: some View {
+        Button(action: {
+            print("tapped!")
+        }) {
+            HStack {
+                Image(systemName: icon)
+                    .font(.title)
+                Text(title)
+                    .fontWeight(.semibold)
+                    .font(.title)
+            }
+            
+        }
+        .buttonStyle(GradientBackgroundStyle())
     }
 }
 
