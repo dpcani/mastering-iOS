@@ -14,6 +14,10 @@ struct ContentView: View {
                print("Button pressed!")
             } label: {
                 Text("Hello World")
+                    .padding()
+                    .background(.purple)
+                    .foregroundColor(.white)
+                    .font(.title)
             }
         }
         .padding()
