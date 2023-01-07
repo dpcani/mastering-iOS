@@ -18,9 +18,13 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .padding()
                     .background(.purple)
+                    .cornerRadius(40)
                     .foregroundColor(.white)
                     .padding(10)
-                    .border(.purple, width: 5)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke(.purple, lineWidth: 5)
+                    }
                 
             }
         }
