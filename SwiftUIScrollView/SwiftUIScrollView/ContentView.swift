@@ -9,13 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ScrollView {
+            HStack {
+                VStack (alignment: .leading){
+                    Text("MONDAY, JAN 7")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Text("Your Reading")
+                        .font(.system(.title, design: .rounded))
+                        .fontWeight(.black)
+                        .foregroundColor(.primary)
+                }
+                .padding(.horizontal)
+                Spacer()
+            }
+            VStack {
+                CardView(image: "swiftui-button", category: "SwiftUI", heading: "Drawing a Border with Rounded Corners", author: "Simon Ng")
+                CardView(image: "macos-programming", category: "macOS", heading: "Building a Simple Editing App", author: "Gabriel Theodoropoulos")
+                CardView(image: "flutter-app", category: "Flutter", heading: "Building a Complex Layout with Flutter", author: "Lawrence Tan")
+                CardView(image: "natural-language-api", category: "iOS", heading: "What's New in Natural Language API", author: "Sai Kambampati")
+            }
         }
-        .padding()
     }
 }
 

@@ -55,9 +55,9 @@
 			children = (
 				0BCE72DD29694EBA006A95C3 /* SwiftUIScrollViewApp.swift */,
 				0BCE72DF29694EBA006A95C3 /* ContentView.swift */,
+				0BCE72EB29694F0B006A95C3 /* CardView.swift */,
 				0BCE72E129694EBC006A95C3 /* Assets.xcassets */,
 				0BCE72E329694EBC006A95C3 /* Preview Content */,
-				0BCE72EB29694F0B006A95C3 /* CardView.swift */,
 			);
 			path = SwiftUIScrollView;
 			sourceTree = "<group>";

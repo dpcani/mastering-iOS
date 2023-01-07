@@ -25,7 +25,7 @@ struct CardView: View {
                         .font(.headline)
                         .foregroundColor(.secondary)
                     Text(heading)
-                        .font(.title)
+                        .font(.system(.title, design: .rounded))
                         .fontWeight(.black)
                         .foregroundColor(.primary)
                         .lineLimit(3)
