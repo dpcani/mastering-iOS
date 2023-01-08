@@ -8,16 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var counter = 0
+    
     var body: some View {
         VStack(spacing: 25) {
-            PlayStopButton()
+            /*
+                PlayStopButton()
+                CounterButton()
+                CounterButtonCircle()
+            */
             
-            CounterButton()
+            CustomCounterButton(counter: $counter, background: .red, forecolor: .white)
+            CustomCounterButton(counter: $counter, background: .green, forecolor: .white)
+            CustomCounterButton(counter: $counter, background: .blue, forecolor: .white)
             
-            CounterButtonCircle()
+            
         }
     }
 }
+
+struct CustomCounterButton: View {
+    
+    @Binding var counter: Int
+    var background: Color
+    var forecolor: Color
+    
+    var body: some View {
+        Button {
+            counter += 1
+        } label: {
+            Circle()
+                .frame(width: 140, height: 140)
+                .foregroundColor(background)
+                .overlay {
+                    Text("\(counter)")
+                        .font(.system(size: 60, weight: .bold, design: .rounded))
+                        .foregroundColor(forecolor)
+                }
+        }
+    }
+}
+
 
 struct CounterButtonCircle: View {
     
