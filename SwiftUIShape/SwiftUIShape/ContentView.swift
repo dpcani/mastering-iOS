@@ -33,7 +33,7 @@ struct ContentView: View {
                 path.addArc(center: .init(x: 187, y: 187), radius: 150, startAngle: .degrees(90), endAngle: .degrees(360), clockwise: true)
             }
             .fill(.purple)
-            
+            .offset(x: 20, y: 20)
             
         }
     }
