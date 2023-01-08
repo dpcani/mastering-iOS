@@ -24,7 +24,7 @@ struct ContentView: View {
                 .font(.system(size: 100))
                 .scaleEffect(heartSizeChanged ? 1.0 : 0.5)
         }
-        .animation(.default, value: circleColorChanged)
+        .animation(.spring(response: 0.3, dampingFraction: 0.3, blendDuration: 0.3), value: circleColorChanged)
         .animation(.default, value: heartSizeChanged)
         .onTapGesture {
             circleColorChanged.toggle()
