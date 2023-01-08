@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var counter = 0
+    @State private var counterRed = 0
+    @State private var counterGreen = 0
+    @State private var counterBlue = 0
     
     var body: some View {
         VStack(spacing: 25) {
@@ -18,14 +20,51 @@ struct ContentView: View {
                 CounterButtonCircle()
             */
             
-            CustomCounterButton(counter: $counter, background: .red, forecolor: .white)
-            CustomCounterButton(counter: $counter, background: .green, forecolor: .white)
-            CustomCounterButton(counter: $counter, background: .blue, forecolor: .white)
+            /*
+                CustomCounterButton(counter: $counter, background: .red, forecolor: .white)
+                CustomCounterButton(counter: $counter, background: .green, forecolor: .white)
+                CustomCounterButton(counter: $counter, background: .blue, forecolor: .white)
+            */
             
-            
+            Spacer()
+            Text("\(counterRed + counterGreen + counterBlue)")
+                .font(.system(size: 150, weight: .bold, design: .rounded))
+                .padding()
+            Spacer()
+            HStack(alignment: .center, spacing: 25) {
+                CustomCounterButton2(counter: $counterRed, background: .red, forecolor: .white)
+                CustomCounterButton2(counter: $counterGreen, background: .green, forecolor: .white)
+                CustomCounterButton2(counter: $counterBlue, background: .blue, forecolor: .white)
+            }
+            .padding([.horizontal])
+            Spacer()
         }
     }
 }
+
+struct CustomCounterButton2: View {
+    
+    @Binding var counter: Int
+    var background: Color
+    var forecolor: Color
+    
+    var body: some View {
+        Button {
+            counter += 1
+        } label: {
+            Circle()
+                .frame(width: 100, height: 100)
+                .foregroundColor(background)
+                .overlay {
+                    Text("\(counter)")
+                        .font(.system(size: 60, weight: .bold, design: .rounded))
+                        .foregroundColor(forecolor)
+                }
+        }
+    }
+}
+
+
 
 struct CustomCounterButton: View {
     
