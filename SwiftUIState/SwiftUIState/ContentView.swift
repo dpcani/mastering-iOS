@@ -9,13 +9,36 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 25) {
             PlayStopButton()
             
             CounterButton()
+            
+            CounterButtonCircle()
         }
     }
 }
+
+struct CounterButtonCircle: View {
+    
+    @State private var counter = 0
+    
+    var body: some View {
+        Button {
+            counter += 1
+        } label: {
+            Circle()
+                .frame(width: 140, height: 140)
+                .foregroundColor(.blue)
+                .overlay {
+                    Text("\(counter)")
+                        .font(.system(size: 60, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+                }
+        }
+    }
+}
+
 
 struct CounterButton: View {
     
