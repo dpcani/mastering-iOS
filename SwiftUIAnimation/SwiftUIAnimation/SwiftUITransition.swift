@@ -35,7 +35,7 @@ struct SwiftUITransition: View {
                             .bold()
                             .foregroundColor(.white)
                     )
-                    .transition(AnyTransition.offset(x: -600, y: 0).combined(with: .scale).combined(with: .opacity))
+                    .transition(.offsetScaleOpacity)
             }
         }
         .onTapGesture {
@@ -49,5 +49,11 @@ struct SwiftUITransition: View {
 struct SwiftUITransition_Previews: PreviewProvider {
     static var previews: some View {
         SwiftUITransition()
+    }
+}
+
+extension AnyTransition {
+    static var offsetScaleOpacity: AnyTransition {
+        AnyTransition.offset(x: -600, y: 0).combined(with: .scale).combined(with: .opacity)
     }
 }
