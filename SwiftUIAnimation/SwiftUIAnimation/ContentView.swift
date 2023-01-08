@@ -24,12 +24,12 @@ struct ContentView: View {
                 .font(.system(size: 100))
                 .scaleEffect(heartSizeChanged ? 1.0 : 0.5)
         }
-        .animation(.spring(response: 0.3, dampingFraction: 0.3, blendDuration: 0.3), value: circleColorChanged)
-        .animation(.default, value: heartSizeChanged)
         .onTapGesture {
-            circleColorChanged.toggle()
-            heartSizeChanged.toggle()
-            heartColorChanged.toggle()
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.3, blendDuration: 0.3)) {
+                circleColorChanged.toggle()
+                heartSizeChanged.toggle()
+                heartColorChanged.toggle()
+            }
         }
     }
 }
