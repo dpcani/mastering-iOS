@@ -35,7 +35,7 @@ struct SwiftUITransition: View {
                             .bold()
                             .foregroundColor(.white)
                     )
-                    .transition(.scale(scale: 0, anchor: .bottom))
+                    .transition(AnyTransition.offset(x: -600, y: 0).combined(with: .scale).combined(with: .opacity))
             }
         }
         .onTapGesture {
