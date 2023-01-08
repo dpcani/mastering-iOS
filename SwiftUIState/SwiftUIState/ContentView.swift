@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var counter = 0
     @State private var counterRed = 0
     @State private var counterGreen = 0
     @State private var counterBlue = 0
@@ -20,12 +21,12 @@ struct ContentView: View {
                 CounterButtonCircle()
             */
             
-            /*
+            
                 CustomCounterButton(counter: $counter, background: .red, forecolor: .white)
                 CustomCounterButton(counter: $counter, background: .green, forecolor: .white)
                 CustomCounterButton(counter: $counter, background: .blue, forecolor: .white)
-            */
             
+            /*
             Spacer()
             Text("\(counterRed + counterGreen + counterBlue)")
                 .font(.system(size: 150, weight: .bold, design: .rounded))
@@ -37,7 +38,7 @@ struct ContentView: View {
                 CustomCounterButton2(counter: $counterBlue, background: .blue, forecolor: .white)
             }
             .padding([.horizontal])
-            Spacer()
+            Spacer() */
         }
     }
 }
