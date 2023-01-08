@@ -18,11 +18,13 @@ struct ContentView: View {
             Circle()
                 .frame(width: 200, height: 200)
                 .foregroundColor(circleColorChanged ? Color(.systemGray5) : .red)
+                .animation(.default, value: circleColorChanged)
             
             Image(systemName: "heart.fill")
                 .foregroundColor(heartColorChanged ? .red : .white)
                 .font(.system(size: 100))
                 .scaleEffect(heartSizeChanged ? 1.0 : 0.5)
+                .animation(.default, value: heartSizeChanged)
         }
         .onTapGesture {
             circleColorChanged.toggle()
