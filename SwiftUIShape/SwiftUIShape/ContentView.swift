@@ -8,50 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    private var purpleGradient = LinearGradient(gradient: Gradient(colors: [Color(red: 207/255, green: 150/255, blue: 207/255), Color(red: 107/255, green: 116/255, blue: 179/255)]), startPoint: .trailing, endPoint: .leading)
+    
     var body: some View {
-        /*ZStack {
-            Path() { path in
-                path.move(to: CGPoint(x: 187, y: 187))
-                path.addArc(center: .init(x: 187, y: 187), radius: 150, startAngle: .degrees(0), endAngle: .degrees(190), clockwise: true)
-            }
-            .fill(.yellow)
-            
-            Path() { path in
-                path.move(to: CGPoint(x: 187, y: 187))
-                path.addArc(center: .init(x: 187, y: 187), radius: 150, startAngle: .degrees(190), endAngle: .degrees(110), clockwise: true)
-            }
-            .fill(.teal)
-            
-            Path() { path in
-                path.move(to: CGPoint(x: 187, y: 187))
-                path.addArc(center: .init(x: 187, y: 187), radius: 150, startAngle: .degrees(110), endAngle: .degrees(90), clockwise: true)
-            }
-            .fill(.blue)
-            
-            Path() { path in
-                path.move(to: CGPoint(x: 187, y: 187))
-                path.addArc(center: .init(x: 187, y: 187), radius: 150, startAngle: .degrees(90), endAngle: .degrees(360), clockwise: true)
-                path.closeSubpath()
-            }
-            .fill(.purple)
-            .offset(x: 20, y: 20)
-            .overlay {
-                Text("25%")
-                    .font(.system(.largeTitle, design: .rounded))
-                    .bold()
-                    .foregroundColor(.white)
-                    .offset(x: 80, y: -110)
-            }
-            
-        }*/
-        
-        Button {} label: {
-            Text("Dome")
-                .font(.system(.title, design: .rounded))
-                .bold()
-                .foregroundColor(.white)
-                .frame(width: 250, height: 50)
-                .background(Dome().fill(.red))
+        ZStack{
+            Circle()
+                .stroke(Color(.systemGray6), lineWidth: 20)
+                .frame(width: 300, height: 300)
+            Circle()
+                .trim(from: 0, to: 0.85)
+                .stroke(purpleGradient, lineWidth: 20)
+                .frame(width: 300, height: 300)
+                .overlay {
+                    VStack{
+                        Text("85%")
+                            .font(.system(size: 80, weight: .bold, design: .rounded))
+                            .foregroundColor(.gray)
+                        Text("Complete")
+                            .font(.system(.body, design: .rounded))
+                            .bold()
+                            .foregroundColor(.gray)
+                    }
+                }
         }
     }
 }
