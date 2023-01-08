@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct SwiftUITransition: View {
+    
+    @State private var show = false
+    
     var body: some View {
         
         VStack {
+            
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 300, height: 300)
                 .foregroundColor(.green)
@@ -21,15 +25,22 @@ struct SwiftUITransition: View {
                         .foregroundColor(.white)
                 )
             
-            RoundedRectangle(cornerRadius: 10)
-                .frame(width: 300, height: 300)
-                .foregroundColor(.purple)
-                .overlay(
-                    Text("Well, here is the details")
-                        .font(.system(.largeTitle, design: .rounded))
-                        .bold()
-                        .foregroundColor(.white)
-                )
+            if show {
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(width: 300, height: 300)
+                    .foregroundColor(.purple)
+                    .overlay(
+                        Text("Well, here is the details")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .bold()
+                            .foregroundColor(.white)
+                    )
+            }
+        }
+        .onTapGesture {
+            withAnimation(.spring()) {
+                self.show.toggle()
+            }
         }
     }
 }
