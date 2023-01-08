@@ -10,12 +10,25 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        VStack {
+        VStack(spacing: 15) {
             CustomButton(icon: "trash", title: "Delete")
             CustomButton(icon: "square.and.arrow.up", title: "Share")
             CustomButton(icon: "square.and.pencil", title: "Edit")
             
             CustomCircleButton()
+            
+            HStack {
+                Button("Delete", role: .destructive) {
+                    print("Delete")
+                }
+
+                Button("Cancel", role: .cancel) {
+                    print("Cancel")
+                }
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .padding()
         }
         
     }
