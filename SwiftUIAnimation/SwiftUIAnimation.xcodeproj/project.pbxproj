@@ -11,6 +11,7 @@
 		0B18394D296B5CFB0010EC01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18394C296B5CFB0010EC01 /* ContentView.swift */; };
 		0B18394F296B5CFD0010EC01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B18394E296B5CFD0010EC01 /* Assets.xcassets */; };
 		0B183952296B5CFD0010EC01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B183951296B5CFD0010EC01 /* Preview Assets.xcassets */; };
+		0B183959296B6CC30010EC01 /* SwiftUITransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B183958296B6CC30010EC01 /* SwiftUITransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		0B18394C296B5CFB0010EC01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0B18394E296B5CFD0010EC01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B183951296B5CFD0010EC01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0B183958296B6CC30010EC01 /* SwiftUITransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				0B18394A296B5CFB0010EC01 /* SwiftUIAnimationApp.swift */,
 				0B18394C296B5CFB0010EC01 /* ContentView.swift */,
+				0B183958296B6CC30010EC01 /* SwiftUITransition.swift */,
 				0B18394E296B5CFD0010EC01 /* Assets.xcassets */,
 				0B183950296B5CFD0010EC01 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B18394D296B5CFB0010EC01 /* ContentView.swift in Sources */,
+				0B183959296B6CC30010EC01 /* SwiftUITransition.swift in Sources */,
 				0B18394B296B5CFB0010EC01 /* SwiftUIAnimationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
