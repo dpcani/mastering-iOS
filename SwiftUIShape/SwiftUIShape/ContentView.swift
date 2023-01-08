@@ -31,9 +31,17 @@ struct ContentView: View {
             Path() { path in
                 path.move(to: CGPoint(x: 187, y: 187))
                 path.addArc(center: .init(x: 187, y: 187), radius: 150, startAngle: .degrees(90), endAngle: .degrees(360), clockwise: true)
+                path.closeSubpath()
             }
             .fill(.purple)
             .offset(x: 20, y: 20)
+            .overlay {
+                Text("25%")
+                    .font(.system(.largeTitle, design: .rounded))
+                    .bold()
+                    .foregroundColor(.white)
+                    .offset(x: 80, y: -110)
+            }
             
         }
     }
