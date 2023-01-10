@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petit e Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats And Deli" , "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donos tia", "Royal Oak", "CASK Pub and Kitchen"]
+    
+    var restaurantImages = ["cafedeadend", "homei", "teakha", "cafeloisl", "petite oyster", "forkeerestaurant", "posatelier", "bourkestreetbakery", "haighschocolate" , "palominoespresso", "upstate", "traif", "grahamavenuemeats", "wafflewolf", "five leaves", "cafelore", "confessional", "barrafina", "donostia", "royaloak", "caskpub kitchen"]
+    
     var body: some View {
         VStack {
-            List {
-                ForEach(1...4, id: \.self) { index in
-                    Text("Item \(index)")
+            List(restaurantNames.indices, id: \.self) { index in
+                HStack {
+                    Image(self.restaurantImages[index])
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .cornerRadius(5)
+                    Text(self.restaurantNames[index])
                 }
             }
-            
-            List(1...4, id: \.self) {
-                Text("Item \($0)")
-            }
         }
-        .padding()
     }
 }
 
