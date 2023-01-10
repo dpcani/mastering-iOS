@@ -9,20 +9,23 @@
 /* Begin PBXBuildFile section */
 		0B18394B296B5CFB0010EC01 /* SwiftUIAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18394A296B5CFB0010EC01 /* SwiftUIAnimationApp.swift */; };
 		0B18394D296B5CFB0010EC01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18394C296B5CFB0010EC01 /* ContentView.swift */; };
-		0B18394F296B5CFD0010EC01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B18394E296B5CFD0010EC01 /* Assets.xcassets */; };
-		0B183952296B5CFD0010EC01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B183951296B5CFD0010EC01 /* Preview Assets.xcassets */; };
 		0B183959296B6CC30010EC01 /* SwiftUITransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B183958296B6CC30010EC01 /* SwiftUITransition.swift */; };
 		0B18395B296B70F10010EC01 /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18395A296B70F10010EC01 /* FancyButton.swift */; };
+		0B18395D296B76410010EC01 /* SwiftUICardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18395C296B76410010EC01 /* SwiftUICardAnimation.swift */; };
+		0B18395F296B76940010EC01 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18395E296B76940010EC01 /* CardView.swift */; };
+		0B7A340A296E067C00891E6D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B7A3409296E067C00891E6D /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B183947296B5CFB0010EC01 /* SwiftUIAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B18394A296B5CFB0010EC01 /* SwiftUIAnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAnimationApp.swift; sourceTree = "<group>"; };
 		0B18394C296B5CFB0010EC01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0B18394E296B5CFD0010EC01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0B183951296B5CFD0010EC01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B183958296B6CC30010EC01 /* SwiftUITransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITransition.swift; sourceTree = "<group>"; };
 		0B18395A296B70F10010EC01 /* FancyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
+		0B18395C296B76410010EC01 /* SwiftUICardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICardAnimation.swift; sourceTree = "<group>"; };
+		0B18395E296B76940010EC01 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0B183961296B77FB0010EC01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Preview Assets.xcassets"; path = "../../../../../../Downloads/SwiftUICardAnimation/SwiftUICardAnimation/Preview Content/Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0B7A3409296E067C00891E6D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +42,6 @@
 		0B18393E296B5CFB0010EC01 = {
 			isa = PBXGroup;
 			children = (
-				0B18395A296B70F10010EC01 /* FancyButton.swift */,
 				0B183949296B5CFB0010EC01 /* SwiftUIAnimation */,
 				0B183948296B5CFB0010EC01 /* Products */,
 			);
@@ -56,10 +58,13 @@
 		0B183949296B5CFB0010EC01 /* SwiftUIAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				0B7A3409296E067C00891E6D /* Media.xcassets */,
+				0B18395E296B76940010EC01 /* CardView.swift */,
+				0B18395C296B76410010EC01 /* SwiftUICardAnimation.swift */,
+				0B18395A296B70F10010EC01 /* FancyButton.swift */,
 				0B18394A296B5CFB0010EC01 /* SwiftUIAnimationApp.swift */,
 				0B18394C296B5CFB0010EC01 /* ContentView.swift */,
 				0B183958296B6CC30010EC01 /* SwiftUITransition.swift */,
-				0B18394E296B5CFD0010EC01 /* Assets.xcassets */,
 				0B183950296B5CFD0010EC01 /* Preview Content */,
 			);
 			path = SwiftUIAnimation;
@@ -68,7 +73,7 @@
 		0B183950296B5CFD0010EC01 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				0B183951296B5CFD0010EC01 /* Preview Assets.xcassets */,
+				0B183961296B77FB0010EC01 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -131,8 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B183952296B5CFD0010EC01 /* Preview Assets.xcassets in Resources */,
-				0B18394F296B5CFD0010EC01 /* Assets.xcassets in Resources */,
+				0B7A340A296E067C00891E6D /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B18395D296B76410010EC01 /* SwiftUICardAnimation.swift in Sources */,
 				0B18394D296B5CFB0010EC01 /* ContentView.swift in Sources */,
 				0B18395B296B70F10010EC01 /* FancyButton.swift in Sources */,
 				0B183959296B6CC30010EC01 /* SwiftUITransition.swift in Sources */,
+				0B18395F296B76940010EC01 /* CardView.swift in Sources */,
 				0B18394B296B5CFB0010EC01 /* SwiftUIAnimationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
