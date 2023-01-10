@@ -33,12 +33,15 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            List(restaurants.indices, id:\.self) { index in
-                if(0...1).contains(index) {
-                    FullImageRow(restaurant: restaurants[index])
-                } else {
-                    BasicImageRow(restaurant: restaurants[index])
+            List(restaurants) { restaurant in
+                ForEach(restaurants.indices, id:\.self) { index in
+                    if(0...1).contains(index) {
+                        FullImageRow(restaurant: restaurants[index])
+                    } else {
+                        BasicImageRow(restaurant: restaurants[index])
+                    }
                 }
+                .listRowSeparatorTint(.green)
             }
             .listStyle(.plain)
         }
