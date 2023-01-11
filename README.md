@@ -1,10 +1,1 @@
-# Mastering iOS with SwiftUI
-
-## Branches:
-1- Layout User Interface with Stacks <br>
-2- ScrollView and  Building a Carousel UI<br>
-3- Working with SwiftUI Buttons, Labels and Gradient<br>
-4- State and Binding <br>
-5- Path and Shape for Line Drawing and Pie Charts <br>
-6- Basic Animations and Transitions<br>
-7- Understanding List, ForEach and Identifiable
+<img src="https://raw.githubusercontent.com/dpcani/mastering-iOS/b7d6c09183d72b15010689f6830497ea36bf0b55/SwiftUIList/cover.jpg">
