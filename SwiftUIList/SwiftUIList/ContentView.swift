@@ -32,7 +32,7 @@ struct ContentView: View {
  
     
     var body: some View {
-        VStack {
+      
             List(restaurants) { restaurant in
                 ForEach(restaurants.indices, id:\.self) { index in
                     if(0...1).contains(index) {
@@ -43,9 +43,15 @@ struct ContentView: View {
                 }
                 .listRowSeparator(.hidden, edges: .bottom)
             }
-            .listStyle(.plain)
+            //.background(Color.yellow)
+            .background {
+                Image("homei")
+                    .resizable()
+                    .scaledToFill()
+                    .clipped()
+            }
+            .scrollContentBackground(Visibility.hidden)
         }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
