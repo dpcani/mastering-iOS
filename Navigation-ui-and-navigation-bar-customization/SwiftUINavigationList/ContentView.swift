@@ -36,6 +36,7 @@ struct ContentView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Restaurants")
+            .navigationBarTitleDisplayMode(.automatic)
         }
     }
 }
