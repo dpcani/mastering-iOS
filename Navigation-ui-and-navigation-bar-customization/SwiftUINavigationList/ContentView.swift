@@ -26,12 +26,15 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        List {
-            ForEach(restaurants) { restaurant in
-                BasicImageRow(restaurant: restaurant)
+        NavigationStack {
+            List {
+                ForEach(restaurants) { restaurant in
+                    BasicImageRow(restaurant: restaurant)
+                }
             }
+            .listStyle(.plain)
+            .navigationTitle("Restaurants")
         }
-        .listStyle(.plain)
     }
 }
 
