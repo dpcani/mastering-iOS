@@ -38,12 +38,16 @@ struct ArticleDetailView: View {
                 Spacer()
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let article = articles[0]
-        ArticleDetailView(article: article)
+        NavigationStack {
+            ArticleDetailView(article: article)
+        }
+        .navigationTitle("Article")
     }
 }
