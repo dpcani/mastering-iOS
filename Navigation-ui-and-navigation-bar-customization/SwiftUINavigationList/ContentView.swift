@@ -29,7 +29,9 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(restaurants) { restaurant in
-                    BasicImageRow(restaurant: restaurant)
+                    NavigationLink(destination: RestaurantDetailView(restaurant: restaurant)) {
+                        BasicImageRow(restaurant: restaurant)
+                    }
                 }
             }
             .listStyle(.plain)
@@ -64,3 +66,20 @@ struct BasicImageRow: View {
     }
 }
 
+struct RestaurantDetailView: View {
+    var restaurant: Restaurant
+    
+    var body: some View {
+        VStack {
+            Image(restaurant.image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            Text(restaurant.name)
+                .font(.system(.title, design: .rounded))
+                .fontWeight(.black)
+            
+            Spacer()
+        }
+    }
+}
