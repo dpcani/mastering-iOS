@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ArticleDetailView: View {
+    @Environment(\.dismiss) var dismiss
     
     var article: Article
     
@@ -10,6 +11,23 @@ struct ArticleDetailView: View {
                 Image(article.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .overlay {
+                        HStack {
+                            Spacer()
+                            VStack {
+                                Button {
+                                    dismiss()
+                                } label: {
+                                    Image(systemName: "chevron.down.circle.fill")
+                                        .font(.largeTitle)
+                                        .foregroundColor(.white)
+                                }
+                                .padding(.trailing, 20)
+                                .padding(.top, 40)
+                                Spacer()
+                            }
+                        }
+                    }
                     
                 Group {
                     Text(article.title)
