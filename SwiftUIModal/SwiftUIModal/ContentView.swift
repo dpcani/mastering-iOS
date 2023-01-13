@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @State var selectedArticle: Article?
     
     var body: some View {
@@ -15,14 +15,15 @@ struct ContentView: View {
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-            .sheet(item: $selectedArticle, content: { article in
-                ArticleRow(article: article)
-            })
+            .sheet(item: $selectedArticle) { article in
+                ArticleDetailView(article: article)
+            }
+            
             .navigationTitle("Your Reading")
         }
+        
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

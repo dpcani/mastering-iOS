@@ -12,37 +12,6 @@ struct ArticleDetailView: View {
                 Image(article.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .overlay (
-                        HStack {
-                            Spacer()
-                            VStack {
-                                Button {
-                                    self.showAlert = true
-                                } label: {
-                                    Image(systemName: "chevron.down.circle.fill")
-                                        .font(.largeTitle)
-                                        .foregroundColor(.white)
-                                }
-                                .padding(.trailing, 20)
-                                .padding(.top, 40)
-                                Spacer()
-                            }
-                        }
-                    )
-                    .alert("Reminder", isPresented: $showAlert, actions: {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Text("Yes")
-                        }
-                        Button(role: .cancel) {
-                            
-                        } label: {
-                            Text("No")
-                        }
-                    }, message: {
-                        Text("Are you sure are fisnished reading the article?")
-                    })
                     
                 Group {
                     Text(article.title)
@@ -63,12 +32,49 @@ struct ArticleDetailView: View {
                     .lineLimit(1000)
                     .multilineTextAlignment(.leading)
             }
+            
         }
+        .overlay(
+            
+            HStack {
+                Spacer()
+                
+                VStack {
+                    Button {
+                        self.showAlert = true
+                    } label: {
+                        Image(systemName: "chevron.down.circle.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                    }
+
+                    .padding(.trailing, 20)
+                    .padding(.top, 40)
+                    
+                    Spacer()
+                }
+            }
+        )
+        .alert("Reminder", isPresented: $showAlert, actions: {
+            Button {
+                dismiss()
+            } label: {
+                Text("Yes")
+            }
+            
+            Button(role: .cancel, action: {}) {
+                Text("No")
+            }
+
+        }, message: {
+            Text("Are you sure you are finished reading the article?")
+        })
         .ignoresSafeArea(.all, edges: .top)
+
+        
         
     }
 }
-
 struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ArticleDetailView(article: articles[0])
