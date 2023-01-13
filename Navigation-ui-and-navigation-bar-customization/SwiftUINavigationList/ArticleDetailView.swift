@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ArticleDetailView: View {
+    @Environment(\.dismiss) var dismiss
+    
     let article: Article
     
     var body: some View {
@@ -39,6 +41,20 @@ struct ArticleDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        .ignoresSafeArea(.all, edges: .top)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left.circle.fill")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                }
+
+            }
+        }
     }
 }
 
