@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ArticleDetailView: View {
     @Environment(\.dismiss) var dismiss
+    @State private var showAlert = false
     
     var article: Article
     
@@ -11,12 +12,12 @@ struct ArticleDetailView: View {
                 Image(article.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .overlay {
+                    .overlay (
                         HStack {
                             Spacer()
                             VStack {
                                 Button {
-                                    dismiss()
+                                    self.showAlert = true
                                 } label: {
                                     Image(systemName: "chevron.down.circle.fill")
                                         .font(.largeTitle)
@@ -27,7 +28,21 @@ struct ArticleDetailView: View {
                                 Spacer()
                             }
                         }
-                    }
+                    )
+                    .alert("Reminder", isPresented: $showAlert, actions: {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Text("Yes")
+                        }
+                        Button(role: .cancel) {
+                            
+                        } label: {
+                            Text("No")
+                        }
+                    }, message: {
+                        Text("Are you sure are fisnished reading the article?")
+                    })
                     
                 Group {
                     Text(article.title)
