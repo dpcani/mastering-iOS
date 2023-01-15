@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingView: View {
-    
+    @Environment (\.dismiss) var dismiss
     @State private var selectedOrder = 0
     @State private var showCheckInOnly = false
     @State private var maxPriceLevel = 5
@@ -51,6 +51,28 @@ struct SettingView: View {
                 }
             }
             .navigationTitle("Settings")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading, content: {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Cancel")
+                            .font(.callout)
+                            .foregroundColor(.black)
+                    }
+
+                })
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Save")
+                            .font(.callout)
+                            .foregroundColor(.black)
+                    }
+
+                }
+            }
         }
     }
 }
