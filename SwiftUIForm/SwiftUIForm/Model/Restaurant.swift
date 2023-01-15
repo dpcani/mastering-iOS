@@ -17,3 +17,5 @@ struct Restaurant: Identifiable {
     var isFavorite: Bool = false
     var isCheckIn: Bool = false
 }
+
+

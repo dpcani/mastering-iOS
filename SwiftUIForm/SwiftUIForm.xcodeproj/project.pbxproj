@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6CD40B2973EA8D005520CF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6CD40A2973EA8D005520CF /* SettingView.swift */; };
 		0BFFEAED2973E81300C62E11 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFEAEC2973E81300C62E11 /* Restaurant.swift */; };
 		0BFFEAF02973E88A00C62E11 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFEAEF2973E88A00C62E11 /* DataSource.swift */; };
 		F4EE5F7F2892955F00E09B4C /* SwiftUIFormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE5F7E2892955F00E09B4C /* SwiftUIFormApp.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B6CD40A2973EA8D005520CF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		0BFFEAEC2973E81300C62E11 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		0BFFEAEF2973E88A00C62E11 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		F4EE5F7B2892955F00E09B4C /* SwiftUIForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +38,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B6CD4092973EA6B005520CF /* Ui */ = {
+			isa = PBXGroup;
+			children = (
+				0B6CD40A2973EA8D005520CF /* SettingView.swift */,
+				F4EE5F802892955F00E09B4C /* ContentView.swift */,
+			);
+			path = Ui;
+			sourceTree = "<group>";
+		};
 		0BFFEAEB2973E7EA00C62E11 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,10 +82,10 @@
 		F4EE5F7D2892955F00E09B4C /* SwiftUIForm */ = {
 			isa = PBXGroup;
 			children = (
-				0BFFEAEE2973E86500C62E11 /* Data */,
+				0B6CD4092973EA6B005520CF /* Ui */,
 				0BFFEAEB2973E7EA00C62E11 /* Model */,
+				0BFFEAEE2973E86500C62E11 /* Data */,
 				F4EE5F7E2892955F00E09B4C /* SwiftUIFormApp.swift */,
-				F4EE5F802892955F00E09B4C /* ContentView.swift */,
 				F4EE5F822892956100E09B4C /* Assets.xcassets */,
 				F4EE5F842892956100E09B4C /* Preview Content */,
 			);
@@ -160,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4EE5F812892955F00E09B4C /* ContentView.swift in Sources */,
+				0B6CD40B2973EA8D005520CF /* SettingView.swift in Sources */,
 				F4EE5F7F2892955F00E09B4C /* SwiftUIFormApp.swift in Sources */,
 				0BFFEAF02973E88A00C62E11 /* DataSource.swift in Sources */,
 				0BFFEAED2973E81300C62E11 /* Restaurant.swift in Sources */,

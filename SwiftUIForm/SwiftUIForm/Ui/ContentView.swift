@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @State var restaurants = getData()
-    
     @State private var selectedRestaurant: Restaurant?
+    @State private var showSettings: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -61,7 +61,21 @@ struct ContentView: View {
             }
             
             .navigationTitle("Restaurant")
-            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        self.showSettings = true
+                    } label: {
+                        Image(systemName: "gear")
+                            .font(.title2)
+                            .foregroundColor(.black)
+                    }
+
+                }
+            }
+            .sheet(isPresented: $showSettings) {
+                SettingView()
+            }
         }
         
        
