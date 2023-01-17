@@ -39,7 +39,9 @@ struct ContentView: View {
             ForEach(restaurants) { restaurant in
                 BasicImageRow(restaurant: restaurant)
                     .contextMenu {
-                        Button(action: {}) {
+                        Button(action: {
+                            self.delete(item: restaurant)
+                        }) {
                             HStack {
                                 Text("Delete")
                                 Image(systemName: "trash")
@@ -58,6 +60,12 @@ struct ContentView: View {
             }
         }
         .listStyle(.plain)
+    }
+    
+    private func delete(item resturant: Restaurant) {
+        if let index = self.restaurants.firstIndex(where: { $0.id == resturant.id}) {
+            self.restaurants.remove(at: index)
+        }
     }
  
 }
