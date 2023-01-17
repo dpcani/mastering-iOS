@@ -41,6 +41,15 @@ struct ContentView: View {
                 BasicImageRow(restaurant: restaurant)
                     .contextMenu {
                         Button(action: {
+                            self.setCheckmark(item: restaurant)
+                        }) {
+                            HStack {
+                                Text("Check-in")
+                                Image(systemName: "checkmark.seal.fill")
+                            }
+                        }
+                        
+                        Button(action: {
                             self.delete(item: restaurant)
                         }) {
                             HStack {
@@ -90,6 +99,12 @@ struct ContentView: View {
             self.restaurants[index].isFavorite.toggle()
         }
     }
+    
+    private func setCheckmark(item restaurant: Restaurant) {
+        if let index = self.restaurants.firstIndex(where: { $0.id == restaurant.id }) {
+            self.restaurants[index].isCheckmark.toggle()
+        }
+    }
  
 }
 
@@ -104,6 +119,7 @@ struct Restaurant: Identifiable {
     var name: String
     var image: String
     var isFavorite: Bool = false
+    var isCheckmark: Bool = false
 
 }
 
@@ -117,12 +133,17 @@ struct BasicImageRow: View {
                 .frame(width: 40, height: 40)
                 .cornerRadius(5)
             Text(restaurant.name)
+            if restaurant.isCheckmark {
+                Image(systemName: "checkmark.seal.fill")
+                    .foregroundColor(Color.red)
+            }
             
             if restaurant.isFavorite {
                 Spacer()
                 Image(systemName: "star.fill")
                     .foregroundColor(.yellow)
             }
+            
         }
     }
 }
