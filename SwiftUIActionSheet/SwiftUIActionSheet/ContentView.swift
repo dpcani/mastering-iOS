@@ -33,7 +33,6 @@ struct ContentView: View {
        Restaurant(name: "CASK Pub and Kitchen", image: "caskpubkitchen")
     ]
     
-    @State private var showActionSheet = false
     @State private var selectedRestaurant: Restaurant?
 
     var body: some View {
@@ -59,20 +58,15 @@ struct ContentView: View {
                         }
                     }
                     .onTapGesture {
-                        self.showActionSheet.toggle()
                         self.selectedRestaurant = restaurant
                     }
-                    .actionSheet(isPresented: $showActionSheet) {
+                    .actionSheet(item: $selectedRestaurant) { restaurant in
                         ActionSheet(title: Text("What do you want to do"), message: nil, buttons: [
                             .default(Text("Mark as Favorite"), action: {
-                                if let selectedRestaurant = self.selectedRestaurant {
-                                    self.setFavorite(item: selectedRestaurant)
-                                }
+                                self.setFavorite(item: restaurant)
                             }),
                             .destructive(Text("Delete"), action: {
-                                if let selectedRestaurant = self.selectedRestaurant {
-                                    self.delete(item: selectedRestaurant)
-                                }
+                                self.delete(item: restaurant)
                             }),
                             .cancel()
                         ])
