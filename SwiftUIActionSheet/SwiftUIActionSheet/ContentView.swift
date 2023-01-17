@@ -47,7 +47,9 @@ struct ContentView: View {
                                 Image(systemName: "trash")
                             }
                         }
-                        Button(action: {}) {
+                        Button(action: {
+                            self.setFavorite(item: restaurant)
+                        }) {
                             HStack {
                                 Text("Favorite")
                                 Image(systemName: "star")
@@ -67,6 +69,12 @@ struct ContentView: View {
             self.restaurants.remove(at: index)
         }
     }
+    
+    private func setFavorite(item restaurant: Restaurant) {
+        if let index = self.restaurants.firstIndex(where: { $0.id == restaurant.id }) {
+            self.restaurants[index].isFavorite.toggle()
+        }
+    }
  
 }
 
@@ -80,6 +88,7 @@ struct Restaurant: Identifiable {
     var id = UUID()
     var name: String
     var image: String
+    var isFavorite: Bool = false
 
 }
 
@@ -93,6 +102,12 @@ struct BasicImageRow: View {
                 .frame(width: 40, height: 40)
                 .cornerRadius(5)
             Text(restaurant.name)
+            
+            if restaurant.isFavorite {
+                Spacer()
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
         }
     }
 }
