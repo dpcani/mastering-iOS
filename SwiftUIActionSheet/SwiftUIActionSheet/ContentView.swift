@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var restaurants = [
+    @State var restaurants = [
        Restaurant(name: "Cafe Deadend", image: "cafedeadend"),
        Restaurant(name: "Homei", image: "homei"),
        Restaurant(name: "Teakha", image: "teakha"),
@@ -38,6 +38,9 @@ struct ContentView: View {
         List {
             ForEach(restaurants) { restaurant in
                 BasicImageRow(restaurant: restaurant)
+            }
+            .onDelete { (indexSet) in
+                self.restaurants.remove(atOffsets: indexSet)
             }
         }
         .listStyle(.plain)
