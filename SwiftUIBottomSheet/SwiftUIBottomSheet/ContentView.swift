@@ -1,17 +1,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showDetail = false
+    @State private var selectedRestaurant: Restaurant?
+    @State private var selectedDetent: PresentationDetent = .medium
+    
     var body: some View {
         NavigationStack {
             List {
                 ForEach(restaurants) { restaurant in
                     BasicImageRow(restaurant: restaurant)
+                        .onTapGesture {
+                            self.showDetail = true
+                            self.selectedRestaurant = restaurant
+                        }
                 }
             }
             .listStyle(.plain)
             
             .navigationTitle("Restaurants")
         }
+        .sheet(item: $selectedRestaurant) { restaurant in
+            RestaurantDetailView(restaurant: restaurant)
+                .presentationDetents([.height(200), .medium, .large], selection: $selectedDetent)
+                .presentationDragIndicator(.hidden)
+        }
+
     }
 }
 

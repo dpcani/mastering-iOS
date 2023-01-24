@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B79D573297FAA1C00320C0D /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B79D572297FAA1C00320C0D /* RestaurantDetailView.swift */; };
 		F4ECFA2628B3358300866B1D /* SwiftUIBottomSheetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECFA2528B3358300866B1D /* SwiftUIBottomSheetApp.swift */; };
 		F4ECFA2828B3358300866B1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECFA2728B3358300866B1D /* ContentView.swift */; };
 		F4ECFA2A28B3358400866B1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4ECFA2928B3358400866B1D /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B79D572297FAA1C00320C0D /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		F4ECFA2228B3358300866B1D /* SwiftUIBottomSheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBottomSheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4ECFA2528B3358300866B1D /* SwiftUIBottomSheetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBottomSheetApp.swift; sourceTree = "<group>"; };
 		F4ECFA2728B3358300866B1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				F4ECFA2728B3358300866B1D /* ContentView.swift */,
 				F4ECFA2928B3358400866B1D /* Assets.xcassets */,
 				F4ECFA2B28B3358400866B1D /* Preview Content */,
+				0B79D572297FAA1C00320C0D /* RestaurantDetailView.swift */,
 			);
 			path = SwiftUIBottomSheet;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B79D573297FAA1C00320C0D /* RestaurantDetailView.swift in Sources */,
 				F4ECFA2828B3358300866B1D /* ContentView.swift in Sources */,
 				F4ECFA2628B3358300866B1D /* SwiftUIBottomSheetApp.swift in Sources */,
 				F4ECFA3528B3359E00866B1D /* Restaurant.swift in Sources */,
