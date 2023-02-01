@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8C776A2D-B7DB-413A-BF83-E8C3673BA9BC"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA724D95-D9EF-4CBB-BB9B-818CB16C43EB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftUIKivaLoan/Store/LoanStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "filterLoans(maxAmount:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BA724D95-D9EF-4CBB-BB9B-818CB16C43EB - e31e245a100c2cd8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftUIKivaLoan.LoanStore.filterLoans(maxAmount: Swift.Int) -&gt; ()"
+                  moduleName = "SwiftUIKivaLoan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marbleinteractivesl/Documents/iOS/Matering-iOS/SwiftUIKivaLoan/SwiftUIKivaLoan/Store/LoanStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "55">
+               </Location>
+               <Location
+                  uuid = "BA724D95-D9EF-4CBB-BB9B-818CB16C43EB - b635d2ad3e7e09db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftUIKivaLoan.LoanElement) -&gt; Swift.Bool in SwiftUIKivaLoan.LoanStore.filterLoans(maxAmount: Swift.Int) -&gt; ()"
+                  moduleName = "SwiftUIKivaLoan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marbleinteractivesl/Documents/iOS/Matering-iOS/SwiftUIKivaLoan/SwiftUIKivaLoan/Store/LoanStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "59">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

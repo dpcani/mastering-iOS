@@ -15,6 +15,7 @@
 		0B4CD345298A83680060821A /* LoanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4CD344298A83680060821A /* LoanStore.swift */; };
 		0B4CD348298A87F40060821A /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4CD347298A87F40060821A /* BaseNetwork.swift */; };
 		0B4CD34B298A89990060821A /* LoanCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4CD34A298A89990060821A /* LoanCellView.swift */; };
+		0B4CD353298AD38B0060821A /* LoanFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4CD352298AD38A0060821A /* LoanFilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0B4CD347298A87F40060821A /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		0B4CD34A298A89990060821A /* LoanCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanCellView.swift; sourceTree = "<group>"; };
 		0B4CD34C298A8D760060821A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0B4CD352298AD38A0060821A /* LoanFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanFilterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				0B4CD34A298A89990060821A /* LoanCellView.swift */,
+				0B4CD352298AD38A0060821A /* LoanFilterView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			files = (
 				0B4CD34B298A89990060821A /* LoanCellView.swift in Sources */,
 				0B4CD335298A81670060821A /* ContentView.swift in Sources */,
+				0B4CD353298AD38B0060821A /* LoanFilterView.swift in Sources */,
 				0B4CD345298A83680060821A /* LoanStore.swift in Sources */,
 				0B4CD342298A81970060821A /* Loan.swift in Sources */,
 				0B4CD333298A81670060821A /* SwiftUIKivaLoanApp.swift in Sources */,

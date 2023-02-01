@@ -12,6 +12,8 @@ class LoanStore: ObservableObject {
     @Published var loans: [LoanElement] = []
     private var suscriptors = Set<AnyCancellable>()
     
+    private var cachedLoans: [LoanElement] = []
+    
     init(){
         self.loadLoans()
     }
@@ -35,10 +37,14 @@ class LoanStore: ObservableObject {
                 
                 if let loans = data {
                     self.loans = loans
-                    print(self.loans)
+                    self.cachedLoans = self.loans
                 }
             }
             .store(in: &suscriptors)
+    }
+    
+    func filterLoans(maxAmount: Int) {
+        self.loans = self.cachedLoans.filter({ $0.loanAmount! < maxAmount })
     }
     
 }
