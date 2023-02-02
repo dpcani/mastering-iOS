@@ -8,7 +8,12 @@ import SwiftUI
 
 struct ContentView: View {
         
-    @State var todoItems: [ToDoItem] = []
+    @FetchRequest(
+        entity: ToDoItem.entity(),
+        sortDescriptors: [ NSSortDescriptor(keyPath: \ToDoItem.priorityNum, ascending: false)]
+    )
+    
+    var todoItems: FetchedResults<ToDoItem>
     
     @State private var newItemName: String = ""
     @State private var newItemPriority: Priority = .normal
@@ -67,7 +72,7 @@ struct ContentView: View {
                         self.showNewTask = false
                     }
                 
-                NewToDoView(isShow: $showNewTask, todoItems: $todoItems, name: "", priority: .normal)
+                NewToDoView(isShow: $showNewTask, name: "", priority: .normal)
                     .transition(.move(edge: .bottom))
                     .animation(.interpolatingSpring(stiffness: 200.0, damping: 25.0, initialVelocity: 10.0), value: showNewTask)
             }
@@ -107,6 +112,8 @@ struct NoDataView: View {
 
 struct ToDoListRow: View {
     
+    @Environment(\.managedObjectContext) var context
+    
     @ObservedObject var todoItem: ToDoItem
     
     var body: some View {
@@ -123,7 +130,13 @@ struct ToDoListRow: View {
                     .frame(width: 10, height: 10)
                     .foregroundColor(self.color(for: self.todoItem.priority))
             }
-        }.toggleStyle(CheckboxStyle())
+        }
+        .toggleStyle(CheckboxStyle())
+        .onChange(of: todoItem) { _ in
+            if self.context.hasChanges {
+                try? self.context.save()
+            }
+        }
     }
     
     private func color(for priority: Priority) -> Color {
