@@ -12,6 +12,30 @@ struct PersistenceController {
     
     let container: NSPersistentContainer
     
+    static var preview: PersistenceController = {
+        
+        let result = PersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+        
+        for index in 0..<10 {
+            let newItem = ToDoItem(context: viewContext)
+            newItem.id = UUID()
+            newItem.name = "To do imte #\(index)"
+            newItem.priority = .normal
+            newItem.isComplete = false
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        
+        return result
+        
+    }()
+    
+    
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "ToDoList")
         

@@ -7,7 +7,9 @@
 import SwiftUI
 
 struct ContentView: View {
-        
+    
+    @Environment(\.managedObjectContext) var context
+    
     @FetchRequest(
         entity: ToDoItem.entity(),
         sortDescriptors: [ NSSortDescriptor(keyPath: \ToDoItem.priorityNum, ascending: false)]
@@ -48,6 +50,7 @@ struct ContentView: View {
                     ForEach(todoItems) { todoItem in
                         ToDoListRow(todoItem: todoItem)
                     }
+                    .onDelete(perform: deleteTask)
                                        
                 }
                 .listStyle(.plain)
@@ -79,12 +82,28 @@ struct ContentView: View {
         }
     }
     
+    
+    private func deleteTask(indexSet: IndexSet) {
+        for index in indexSet {
+            let itemToDelete = todoItems[index]
+            context.delete(itemToDelete)
+        }
+        
+        DispatchQueue.main.async {
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
+        }
+    }
 
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 
